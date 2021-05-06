@@ -26,7 +26,7 @@ func (c *Controller) ServeHTTP(resp http.ResponseWriter, req *http.Request) {
 	switch req.Method {
 	case "PUT":
 		c.PutToQueue(resp, req, queue)
-	case "POST":
+	case "GET":
 		c.GetFromQueue(resp, req, queue)
 	default:
 		resp.WriteHeader(http.StatusInternalServerError)
